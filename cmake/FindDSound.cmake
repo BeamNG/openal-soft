@@ -9,7 +9,7 @@
 #
 
 find_path(DSOUND_INCLUDE_DIR
-          NAMES dsound.h
+          NAMES dsound.h D3D10.h
           PATHS "${DXSDK_DIR}"
           PATH_SUFFIXES include
           DOC "The DirectSound include directory"
