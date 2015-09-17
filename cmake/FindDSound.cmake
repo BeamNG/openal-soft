@@ -8,17 +8,33 @@
 #   DSOUND_LIBRARY     - the dsound library
 #
 
+if( ${CMAKE_CL_64} )
+    SET (DIRECTX_ARCH "x64")
+else()
+    SET (DIRECTX_ARCH "x86")
+endif()
+
 find_path(DSOUND_INCLUDE_DIR
-          NAMES dsound.h D3D10.h
-          PATHS "${DXSDK_DIR}"
+          NAMES dsound.h
+          PATHS 
+          "${DXSDK_DIR}"
+          "$ENV{DXSDK_DIR}"
+          "$ENV{PROGRAMFILES}/Microsoft DirectX SDK"
+          "$ENV{PROGRAMFILES}/Microsoft DirectX SDK (August 2008)"
+          "$ENV{PROGRAMFILES}/Microsoft DirectX SDK (June 2010)"          
           PATH_SUFFIXES include
           DOC "The DirectSound include directory"
 )
 
 find_library(DSOUND_LIBRARY
              NAMES dsound
-             PATHS "${DXSDK_DIR}"
-             PATH_SUFFIXES lib lib/x86 lib/x64
+             PATHS
+             "${DXSDK_DIR}"
+             "$ENV{DXSDK_DIR}"
+             "$ENV{PROGRAMFILES}/Microsoft DirectX SDK"
+             "$ENV{PROGRAMFILES}/Microsoft DirectX SDK (August 2008)"
+             "$ENV{PROGRAMFILES}/Microsoft DirectX SDK (June 2010)"             
+             PATH_SUFFIXES lib/${DIRECTX_ARCH}
              DOC "The DirectSound library"
 )
 
