@@ -16,25 +16,25 @@ endif()
 
 find_path(DSOUND_INCLUDE_DIR
           NAMES dsound.h
+          NO_DEFAULT_PATH
           PATHS 
-          "${DXSDK_DIR}"
-          "$ENV{DXSDK_DIR}"
-          "$ENV{PROGRAMFILES}/Microsoft DirectX SDK"
-          "$ENV{PROGRAMFILES}/Microsoft DirectX SDK (August 2008)"
-          "$ENV{PROGRAMFILES}/Microsoft DirectX SDK (June 2010)"          
-          PATH_SUFFIXES include
+          "${DXSDK_DIR}/include"
+          "$ENV{DXSDK_DIR}/include"
+          "$ENV{PROGRAMFILES}/Microsoft DirectX SDK/include"
+          "$ENV{PROGRAMFILES}/Microsoft DirectX SDK (August 2008)/include"
+          "$ENV{PROGRAMFILES}/Microsoft DirectX SDK (June 2010)/include"          
           DOC "The DirectSound include directory"
 )
 
 find_library(DSOUND_LIBRARY
              NAMES dsound
+             NO_DEFAULT_PATH
              PATHS
-             "${DXSDK_DIR}"
-             "$ENV{DXSDK_DIR}"
-             "$ENV{PROGRAMFILES}/Microsoft DirectX SDK"
-             "$ENV{PROGRAMFILES}/Microsoft DirectX SDK (August 2008)"
-             "$ENV{PROGRAMFILES}/Microsoft DirectX SDK (June 2010)"             
-             PATH_SUFFIXES lib/${DIRECTX_ARCH}
+             "${DXSDK_DIR}/Lib/${DIRECTX_ARCH}"
+             "$ENV{DXSDK_DIR}Lib/${DIRECTX_ARCH}"
+             "$ENV{PROGRAMFILES}/Microsoft DirectX SDK/Lib/${DIRECTX_ARCH}"
+             "$ENV{PROGRAMFILES}/Microsoft DirectX SDK (August 2008)/Lib/${DIRECTX_ARCH}"
+             "$ENV{PROGRAMFILES}/Microsoft DirectX SDK (June 2010)/Lib/${DIRECTX_ARCH}"             
              DOC "The DirectSound library"
 )
 
