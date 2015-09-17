@@ -31,7 +31,7 @@ find_library(DSOUND_LIBRARY
              NO_DEFAULT_PATH
              PATHS
              "${DXSDK_DIR}/Lib/${DIRECTX_ARCH}"
-             "$ENV{DXSDK_DIR}Lib/${DIRECTX_ARCH}"
+             "$ENV{DXSDK_DIR}/Lib/${DIRECTX_ARCH}"
              "$ENV{PROGRAMFILES}/Microsoft DirectX SDK/Lib/${DIRECTX_ARCH}"
              "$ENV{PROGRAMFILES}/Microsoft DirectX SDK (August 2008)/Lib/${DIRECTX_ARCH}"
              "$ENV{PROGRAMFILES}/Microsoft DirectX SDK (June 2010)/Lib/${DIRECTX_ARCH}"             
